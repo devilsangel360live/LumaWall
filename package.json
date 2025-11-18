@@ -1,0 +1,13 @@
+{
+  "name": "lumawall-auth-helper",
+  "version": "1.0.0",
+  "description": "Authentication helper for LumaWall Google Calendar",
+  "type": "module",
+  "scripts": {
+    "auth": "node authenticate-google.js"
+  },
+  "dependencies": {
+    "googleapis": "^118.0.0",
+    "dotenv": "^16.3.1"
+  }
+}

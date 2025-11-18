@@ -1,0 +1,32 @@
+{
+  "name": "lumawall-backend",
+  "version": "0.1.0",
+  "description": "Backend API server for LumaWall smart display",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "smart-home",
+    "calendar",
+    "display"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "googleapis": "^128.0.0",
+    "better-sqlite3": "^9.2.2",
+    "node-cron": "^3.0.3",
+    "date-fns": "^3.0.6",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

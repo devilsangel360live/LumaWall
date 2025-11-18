@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-earthy-creamLight text-earthy-slate font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Card styles - Light */
+  .card-rose {
+    @apply bg-earthy-roseLight border border-earthy-rose/30 rounded-lg;
+  }
+
+  .card-peach {
+    @apply bg-earthy-peachLight border border-earthy-peach/30 rounded-lg;
+  }
+
+  .card-sage {
+    @apply bg-earthy-sageLight border border-earthy-sage/30 rounded-lg;
+  }
+
+  .card-cream {
+    @apply bg-white border border-earthy-cream/50 rounded-lg;
+  }
+
+  /* Elegant Dark Cards with Gradients */
+  .card-dark-blue {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    @apply border border-blue-400/30 rounded-lg shadow-lg;
+  }
+
+  .card-dark-purple {
+    background: linear-gradient(135deg, #581c87 0%, #9333ea 100%);
+    @apply border border-purple-400/30 rounded-lg shadow-lg;
+  }
+
+  .card-dark-maroon {
+    background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 100%);
+    @apply border border-red-400/30 rounded-lg shadow-lg;
+  }
+
+  .card-dark-orange {
+    background: linear-gradient(135deg, #9a3412 0%, #ea580c 100%);
+    @apply border border-orange-400/30 rounded-lg shadow-lg;
+  }
+
+  .card-dark-green {
+    background: linear-gradient(135deg, #14532d 0%, #16a34a 100%);
+    @apply border border-green-400/30 rounded-lg shadow-lg;
+  }
+
+  .card-dark-teal {
+    background: linear-gradient(135deg, #134e4a 0%, #14b8a6 100%);
+    @apply border border-teal-400/30 rounded-lg shadow-lg;
+  }
+
+  .card-dark-indigo {
+    background: linear-gradient(135deg, #312e81 0%, #6366f1 100%);
+    @apply border border-indigo-400/30 rounded-lg shadow-lg;
+  }
+
+  .card-dark-slate {
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    @apply border border-slate-400/30 rounded-lg shadow-lg;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-earthy-cream/20;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-earthy-sage/50 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-earthy-sage/70;
+  }
+}
