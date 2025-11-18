@@ -64,10 +64,10 @@ function WeatherPanel({ colors }) {
     // Check again after a delay to see if container becomes available
     const checkTimer = setInterval(() => {
       if (mapContainerRef.current) {
-        console.log('✅ Map container NOW available:', mapContainerRef.current)
+        console.log(' Map container NOW available:', mapContainerRef.current)
         clearInterval(checkTimer)
       } else {
-        console.log('❌ Map container still null')
+        console.log(' Map container still null')
       }
     }, 500)
 
@@ -186,12 +186,12 @@ function WeatherPanel({ colors }) {
   // Check when map container becomes available
   useEffect(() => {
     if (mapContainerRef.current && !mapContainerReady) {
-      console.log('🎯 Map container detected, triggering initialization...')
+      console.log(' Map container detected, triggering initialization...')
       setMapContainerReady(true)
     } else if (!mapContainerRef.current) {
       const checkTimer = setInterval(() => {
         if (mapContainerRef.current && !mapContainerReady) {
-          console.log('🎯 Map container NOW ready!')
+          console.log(' Map container NOW ready!')
           setMapContainerReady(true)
         }
       }, 100)
@@ -454,8 +454,8 @@ function WeatherPanel({ colors }) {
 
   // Metric icons - using custom SVG icons
   const metricIcons = {
-    humidity: '💧',              // Would need droplet/humidity icon
-    visibility: '👁️',           // Would need eye/visibility icon
+    humidity: '',              // Would need droplet/humidity icon
+    visibility: '',           // Would need eye/visibility icon
     sunrise: sunriseIcon,
     sunset: sunsetIcon,
     feelsLike: thermometerWarmerIcon,
@@ -484,7 +484,7 @@ function WeatherPanel({ colors }) {
   }
 
   if (loading) {
-    console.log('⏳ Weather panel in LOADING state')
+    console.log(' Weather panel in LOADING state')
     return (
       <div className="h-full flex items-center justify-center">
         <div className="text-center">
@@ -498,7 +498,7 @@ function WeatherPanel({ colors }) {
     )
   }
 
-  console.log('✅ Weather panel RENDERED - currentWeather:', !!currentWeather, 'forecast:', forecast.length)
+  console.log(' Weather panel RENDERED - currentWeather:', !!currentWeather, 'forecast:', forecast.length)
 
   if (error) {
     return (
@@ -881,7 +881,7 @@ function WeatherPanel({ colors }) {
                   : 'bg-white/80 text-gray-700 hover:bg-white'
                 }`}
             >
-              💧 Rain
+               Rain
             </button>
             <button
               onClick={() => toggleWeatherLayer('temperature')}
@@ -893,7 +893,7 @@ function WeatherPanel({ colors }) {
                   : 'bg-white/80 text-gray-700 hover:bg-white'
                 }`}
             >
-              🌡️ Temp
+               Temp
             </button>
             <button
               onClick={() => toggleWeatherLayer('wind')}
@@ -905,7 +905,7 @@ function WeatherPanel({ colors }) {
                   : 'bg-white/80 text-gray-700 hover:bg-white'
                 }`}
             >
-              💨 Wind
+               Wind
             </button>
           </div>
         </div>

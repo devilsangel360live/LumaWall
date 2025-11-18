@@ -70,11 +70,11 @@ You should see your email listed under "Test users".
 
 ### Common Mistakes
 
-❌ **Wrong Google Account**: Make sure you're authorizing with the SAME account that's added as a test user
+ **Wrong Google Account**: Make sure you're authorizing with the SAME account that's added as a test user
 
-❌ **Not Saved**: After adding test users, make sure you clicked "Save"
+ **Not Saved**: After adding test users, make sure you clicked "Save"
 
-❌ **Wrong Project**: Verify you're in the correct Google Cloud project
+ **Wrong Project**: Verify you're in the correct Google Cloud project
 
 ## Step-by-Step: Adding Test User
 

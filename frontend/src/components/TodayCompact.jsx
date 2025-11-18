@@ -72,7 +72,7 @@ function TodayEventCard({ event }) {
 
         {event.location && (
           <p className="flex items-center gap-1 truncate text-xs">
-            <span>📍</span>
+            <span></span>
             <span className="truncate">{event.location}</span>
           </p>
         )}

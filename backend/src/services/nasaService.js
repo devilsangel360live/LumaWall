@@ -54,12 +54,12 @@ class NasaService {
     // Return cached photo if still fresh
     const now = Date.now();
     if (this.cachedPhoto && this.lastFetch && (now - this.lastFetch < this.cacheExpiry)) {
-      console.log('📸 Returning cached NASA photo');
+      console.log(' Returning cached NASA photo');
       return this.cachedPhoto;
     }
 
     try {
-      console.log('📡 Fetching NASA Image of the Day...');
+      console.log(' Fetching NASA Image of the Day...');
       const feed = await parser.parseURL(this.feedUrl);
 
       if (!feed.items || feed.items.length === 0) {
@@ -83,16 +83,16 @@ class NasaService {
       };
 
       this.lastFetch = now;
-      console.log('✅ NASA Photo fetched:', this.cachedPhoto.title);
+      console.log(' NASA Photo fetched:', this.cachedPhoto.title);
 
       return this.cachedPhoto;
 
     } catch (error) {
-      console.error('❌ Error fetching NASA photo:', error.message);
+      console.error(' Error fetching NASA photo:', error.message);
 
       // Return cached photo if available, even if expired
       if (this.cachedPhoto) {
-        console.log('⚠️ Returning expired cached photo due to fetch error');
+        console.log(' Returning expired cached photo due to fetch error');
         return this.cachedPhoto;
       }
 

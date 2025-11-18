@@ -141,8 +141,8 @@ docker-compose logs backend | grep sync
 **Should see:**
 ```
 Setting up calendar auto-sync: every 15 minutes
-🔄 Running scheduled calendar sync...
-✅ Calendar sync complete: XX events synced
+ Running scheduled calendar sync...
+ Calendar sync complete: XX events synced
 ```
 
 **If not showing:**
@@ -235,11 +235,11 @@ docker-compose restart backend
 
 ## Security Notes
 
-- ✅ `.env` is gitignored (won't be committed to git)
-- ✅ Contains sensitive credentials (API keys, secrets)
-- ✅ Must be created manually on each deployment
-- ⚠️ Don't share .env file publicly
-- ⚠️ Keep backups somewhere safe
+-  `.env` is gitignored (won't be committed to git)
+-  Contains sensitive credentials (API keys, secrets)
+-  Must be created manually on each deployment
+-  Don't share .env file publicly
+-  Keep backups somewhere safe
 
 ## Quick Deployment Script
 
@@ -249,10 +249,10 @@ Save as `deploy.sh`:
 #!/bin/bash
 set -e
 
-echo "🚀 Deploying LumaWall to NAS..."
+echo " Deploying LumaWall to NAS..."
 
 # Copy files
-echo "📁 Copying files..."
+echo " Copying files..."
 rsync -avz \
   --exclude 'node_modules' \
   --exclude '.git' \
@@ -261,24 +261,24 @@ rsync -avz \
   /Users/arindam.pal/Projects/LumaWall/ \
   user@omv6.local:/home/LumaWall/
 
-echo "⚠️  IMPORTANT: Verify .env file exists on NAS!"
+echo "  IMPORTANT: Verify .env file exists on NAS!"
 echo "   SSH to NAS and check: cat /home/LumaWall/.env"
 echo ""
 read -p "Press Enter when .env is verified, or Ctrl+C to abort..."
 
 # Build on NAS
-echo "🔨 Building containers..."
+echo " Building containers..."
 ssh user@omv6.local << 'ENDSSH'
   cd /home/LumaWall
   docker-compose down
   docker-compose build --no-cache
   docker-compose up -d
-  echo "✅ Deployment complete!"
-  echo "📊 Checking logs..."
+  echo " Deployment complete!"
+  echo " Checking logs..."
   docker-compose logs --tail=20
 ENDSSH
 
-echo "✅ Done! Check logs with: ssh user@omv6.local 'cd /home/LumaWall && docker-compose logs -f'"
+echo " Done! Check logs with: ssh user@omv6.local 'cd /home/LumaWall && docker-compose logs -f'"
 ```
 
 Make executable: `chmod +x deploy.sh`
@@ -288,12 +288,12 @@ Run: `./deploy.sh`
 ## Summary
 
 **Key Points:**
-1. ✅ Create `.env` file manually on NAS (gitignored)
-2. ✅ Must be in same directory as docker-compose.yml
-3. ✅ Contains: MapTiler key, Google credentials, SYNC_INTERVAL
-4. ✅ docker-compose reads .env and passes to containers
-5. ✅ Rebuild containers after changing .env
-6. ❌ backend/.env is NOT used by Docker (local dev only)
+1.  Create `.env` file manually on NAS (gitignored)
+2.  Must be in same directory as docker-compose.yml
+3.  Contains: MapTiler key, Google credentials, SYNC_INTERVAL
+4.  docker-compose reads .env and passes to containers
+5.  Rebuild containers after changing .env
+6.  backend/.env is NOT used by Docker (local dev only)
 
 **To change sync interval:**
 - Edit `/home/LumaWall/.env` on NAS

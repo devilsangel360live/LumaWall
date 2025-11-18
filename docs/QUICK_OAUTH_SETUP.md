@@ -2,9 +2,9 @@
 
 ## The Problem You Just Hit
 
-❌ **"The connection was reset"** - This happened because the redirect URI was set to `localhost`, which doesn't work when authenticating from your browser.
+ **"The connection was reset"** - This happened because the redirect URI was set to `localhost`, which doesn't work when authenticating from your browser.
 
-❌ **"device_id and device_name required"** - Fixed by removing those parameters (they're only for mobile apps).
+ **"device_id and device_name required"** - Fixed by removing those parameters (they're only for mobile apps).
 
 ## The Solution (3 Steps)
 
@@ -81,7 +81,7 @@ curl -X POST http://192.168.1.203:3001/api/calendar/sync
 docker-compose logs backend | tail -20
 ```
 
-Should see: `✅ Calendar sync complete: XX events synced`
+Should see: ` Calendar sync complete: XX events synced`
 
 ---
 

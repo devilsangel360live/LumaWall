@@ -136,7 +136,7 @@ function TimelineEventCard({ event }) {
         </div>
 
         {event.location && (
-          <p className="text-xs text-aurora-purple truncate">📍 {event.location}</p>
+          <p className="text-xs text-aurora-purple truncate"> {event.location}</p>
         )}
       </div>
 

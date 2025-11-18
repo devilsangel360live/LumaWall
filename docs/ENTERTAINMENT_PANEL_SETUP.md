@@ -4,9 +4,9 @@ The Entertainment Panel combines movies currently in theaters, astronomical star
 
 ## Features
 
-- 🎬 **Movies in Theaters**: Rotating display of current theatrical releases with posters, ratings, and descriptions
-- ⭐ **Star Chart**: Real-time astronomical chart showing constellations and stars for your location
-- 📜 **Today in History**: Historical events, births, and deaths from this day in history
+-  **Movies in Theaters**: Rotating display of current theatrical releases with posters, ratings, and descriptions
+-  **Star Chart**: Real-time astronomical chart showing constellations and stars for your location
+-  **Today in History**: Historical events, births, and deaths from this day in history
 
 ## API Configuration
 
@@ -78,7 +78,7 @@ LOCATION_LONGITUDE=-74.0060
 │  MOVIES (Top Left)     │   STAR CHART       │
 │  ┌──────────────────┐  │   (Center/Right)   │
 │  │ Movie 1          │  │                    │
-│  │ Movie 2          │  │   ⭐ Full night   │
+│  │ Movie 2          │  │    Full night   │
 │  │ Movie 3          │  │   sky view with    │
 │  └──────────────────┘  │   constellations   │
 │  ─────────────────────┤                    │

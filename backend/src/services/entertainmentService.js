@@ -51,7 +51,7 @@ class EntertainmentService {
 
     // Return cached data if fresh
     if (this.moviesCache && this.moviesCacheExpiry && now < this.moviesCacheExpiry) {
-      console.log('📽️  Returning cached movies');
+      console.log('  Returning cached movies');
       return this.moviesCache;
     }
 
@@ -60,7 +60,7 @@ class EntertainmentService {
         throw new Error('TMDB_API_KEY not configured');
       }
 
-      console.log('📡 Fetching now playing movies from TMDB...');
+      console.log(' Fetching now playing movies from TMDB...');
 
       const response = await fetch(
         `${this.tmdbBaseUrl}/movie/now_playing?api_key=${this.tmdbApiKey}&language=en-US&page=1&region=US`,
@@ -93,15 +93,15 @@ class EntertainmentService {
       this.moviesCache = movies;
       this.moviesCacheExpiry = now + this.moviesCacheTime;
 
-      console.log(`✅ Fetched ${movies.length} movies`);
+      console.log(` Fetched ${movies.length} movies`);
       return movies;
 
     } catch (error) {
-      console.error('❌ Error fetching movies:', error.message);
+      console.error(' Error fetching movies:', error.message);
 
       // Return cached data if available, even if expired
       if (this.moviesCache) {
-        console.log('⚠️  Returning expired cached movies');
+        console.log('  Returning expired cached movies');
         return this.moviesCache;
       }
 
@@ -120,12 +120,12 @@ class EntertainmentService {
 
     // Return cached data if same day
     if (this.historyCache && this.historyCacheDate === todayKey) {
-      console.log('📜 Returning cached history');
+      console.log(' Returning cached history');
       return this.historyCache;
     }
 
     try {
-      console.log(`📡 Fetching Today in History for ${month}/${day}...`);
+      console.log(` Fetching Today in History for ${month}/${day}...`);
 
       const response = await fetch(
         `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/${month}/${day}`,
@@ -170,15 +170,15 @@ class EntertainmentService {
       this.historyCache = history;
       this.historyCacheDate = todayKey;
 
-      console.log(`✅ Fetched ${history.events.length} historical events`);
+      console.log(` Fetched ${history.events.length} historical events`);
       return history;
 
     } catch (error) {
-      console.error('❌ Error fetching history:', error.message);
+      console.error(' Error fetching history:', error.message);
 
       // Return cached data if available
       if (this.historyCache) {
-        console.log('⚠️  Returning cached history');
+        console.log('  Returning cached history');
         return this.historyCache;
       }
 
@@ -194,7 +194,7 @@ class EntertainmentService {
 
     // Return cached chart if fresh
     if (this.starChartCache && this.starChartCacheExpiry && now < this.starChartCacheExpiry) {
-      console.log('⭐ Returning cached star chart');
+      console.log(' Returning cached star chart');
       return this.starChartCache;
     }
 
@@ -203,7 +203,7 @@ class EntertainmentService {
         throw new Error('AstronomyAPI credentials not configured');
       }
 
-      console.log('📡 Fetching star chart from AstronomyAPI...');
+      console.log(' Fetching star chart from AstronomyAPI...');
 
       // Create authorization hash
       const auth = Buffer.from(`${this.astronomyAppId}:${this.astronomyAppSecret}`).toString('base64');
@@ -256,15 +256,15 @@ class EntertainmentService {
       this.starChartCache = starChart;
       this.starChartCacheExpiry = now + this.starChartCacheTime;
 
-      console.log('✅ Star chart fetched successfully');
+      console.log(' Star chart fetched successfully');
       return starChart;
 
     } catch (error) {
-      console.error('❌ Error fetching star chart:', error.message);
+      console.error(' Error fetching star chart:', error.message);
 
       // Return cached data if available
       if (this.starChartCache) {
-        console.log('⚠️  Returning cached star chart');
+        console.log('  Returning cached star chart');
         return this.starChartCache;
       }
 
@@ -295,7 +295,7 @@ class EntertainmentService {
         }
       };
     } catch (error) {
-      console.error('❌ Error fetching entertainment data:', error);
+      console.error(' Error fetching entertainment data:', error);
       throw error;
     }
   }

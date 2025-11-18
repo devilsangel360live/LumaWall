@@ -59,7 +59,7 @@ class NewsService {
       stmt.run(feed.name, feed.category, feed.url);
     }
 
-    console.log(`📰 Initialized ${this.feeds.length} news feeds`);
+    console.log(` Initialized ${this.feeds.length} news feeds`);
   }
 
   /**
@@ -125,7 +125,7 @@ class NewsService {
    */
   async fetchFeed(feedConfig) {
     try {
-      console.log(`📡 Fetching: ${feedConfig.name}`);
+      console.log(` Fetching: ${feedConfig.name}`);
 
       const feed = await parser.parseURL(feedConfig.url);
       const articles = [];
@@ -165,11 +165,11 @@ class NewsService {
       db.prepare('UPDATE news_feeds SET last_fetched = ? WHERE id = ?')
         .run(new Date().toISOString(), feedRecord.id);
 
-      console.log(`✅ ${feedConfig.name}: ${articles.length} articles`);
+      console.log(` ${feedConfig.name}: ${articles.length} articles`);
       return articles;
 
     } catch (error) {
-      console.error(`❌ Error fetching ${feedConfig.name}:`, error.message);
+      console.error(` Error fetching ${feedConfig.name}:`, error.message);
       return [];
     }
   }
@@ -178,7 +178,7 @@ class NewsService {
    * Fetch all feeds and update database
    */
   async fetchAllFeeds() {
-    console.log('🔄 Fetching all news feeds...');
+    console.log(' Fetching all news feeds...');
 
     try {
       const allArticles = [];
@@ -225,7 +225,7 @@ class NewsService {
         );
       }
 
-      console.log(`✅ Stored ${allArticles.length} articles across ${this.feeds.length} feeds`);
+      console.log(` Stored ${allArticles.length} articles across ${this.feeds.length} feeds`);
 
       return {
         success: true,
@@ -234,7 +234,7 @@ class NewsService {
       };
 
     } catch (error) {
-      console.error('❌ Error fetching news feeds:', error);
+      console.error(' Error fetching news feeds:', error);
       throw error;
     }
   }

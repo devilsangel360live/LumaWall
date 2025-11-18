@@ -1,6 +1,6 @@
 # Google Calendar API - Limits & Costs
 
-## Google Calendar API is 100% FREE! 🎉
+## Google Calendar API is 100% FREE! 
 
 **Important:** Google Calendar API has **NO COST** - it's completely free for personal and commercial use!
 
@@ -14,10 +14,10 @@
 Source: https://developers.google.com/calendar/api/guides/quota
 
 ### What This Means:
-- ✅ You will NEVER hit these limits with LumaWall
-- ✅ No billing account needed
-- ✅ No credit card required
-- ✅ 100% free forever
+-  You will NEVER hit these limits with LumaWall
+-  No billing account needed
+-  No credit card required
+-  100% free forever
 
 ## LumaWall API Usage Calculation
 
@@ -35,7 +35,7 @@ Source: https://developers.google.com/calendar/api/guides/quota
 - Syncs per hour: 60 ÷ 15 = **4 syncs**
 - Calls per hour: 4 × 4 = **16 calls**
 - Calls per day: 16 × 24 = **384 calls**
-- **Daily usage: 384 / 1,000,000 = 0.0384%** ✅
+- **Daily usage: 384 / 1,000,000 = 0.0384%** 
 
 ### Different Sync Frequencies
 
@@ -44,11 +44,11 @@ Source: https://developers.google.com/calendar/api/guides/quota
 | **1 minute** | 1,440 | 5,760 | 0.58% |
 | **5 minutes** | 288 | 1,152 | 0.12% |
 | **10 minutes** | 144 | 576 | 0.06% |
-| **15 minutes** ⭐ | 96 | 384 | 0.04% |
+| **15 minutes**  | 96 | 384 | 0.04% |
 | **30 minutes** | 48 | 192 | 0.02% |
 | **60 minutes** | 24 | 96 | 0.01% |
 
-⭐ = Recommended default
+ = Recommended default
 
 ### With More Calendars
 
@@ -73,7 +73,7 @@ SYNC_INTERVAL=15  # Every 15 minutes
 - **Daily API calls:** ~200-600
 - **Quota usage:** <0.1%
 - **Delay:** Max 20 minutes for new events
-- **Perfect balance** ✅
+- **Perfect balance** 
 
 #### **Family/Multi-User** (5-10 calendars)
 ```yaml
@@ -82,7 +82,7 @@ SYNC_INTERVAL=10  # Every 10 minutes
 - **Daily API calls:** ~600-1,500
 - **Quota usage:** <0.2%
 - **Delay:** Max 15 minutes for new events
-- **Still plenty of headroom** ✅
+- **Still plenty of headroom** 
 
 #### **Office/Business** (10-20 calendars)
 ```yaml
@@ -91,7 +91,7 @@ SYNC_INTERVAL=5  # Every 5 minutes
 - **Daily API calls:** ~1,500-5,000
 - **Quota usage:** <0.5%
 - **Delay:** Max 10 minutes for new events
-- **Very responsive** ✅
+- **Very responsive** 
 
 #### **Real-Time Updates** (Need immediate sync)
 ```yaml
@@ -100,7 +100,7 @@ SYNC_INTERVAL=1  # Every minute
 - **Daily API calls:** ~3,000-30,000
 - **Quota usage:** <3%
 - **Delay:** Max 6 minutes for new events
-- **Overkill but possible** ⚠️
+- **Overkill but possible** 
 
 ### Optimal Configuration:
 
@@ -141,7 +141,7 @@ Industry standard pricing (like AWS, Azure):
 - Our usage (15 min, 3 calendars): 11,520 calls/month
 - **Would cost:** ~$0.01/month
 
-**But it's FREE! 🎉**
+**But it's FREE! **
 
 ## Monitoring API Usage
 
@@ -241,11 +241,11 @@ GET .../events?syncToken=abc123
 ## Summary
 
 ### Quick Facts:
-✅ **Google Calendar API is 100% FREE**
-✅ **1,000,000 requests per day quota**
-✅ **LumaWall uses <0.1% of quota**
-✅ **Can sync every minute if desired**
-✅ **No cost optimization needed**
+ **Google Calendar API is 100% FREE**
+ **1,000,000 requests per day quota**
+ **LumaWall uses <0.1% of quota**
+ **Can sync every minute if desired**
+ **No cost optimization needed**
 
 ### Recommended Settings:
 
@@ -258,10 +258,10 @@ backend:
 
 **Alternative options:**
 - Fast updates: `SYNC_INTERVAL=5` (every 5 min)
-- Balanced: `SYNC_INTERVAL=15` (every 15 min) ⭐
+- Balanced: `SYNC_INTERVAL=15` (every 15 min) 
 - Conservative: `SYNC_INTERVAL=30` (every 30 min)
 
 ### Bottom Line:
 **Sync as frequently as you want!** The API is free and you'll never hit the limits with a home display. The 15-minute default is for balance, not cost savings.
 
-If you want near-real-time updates, set it to 1-5 minutes without worry! 🚀
+If you want near-real-time updates, set it to 1-5 minutes without worry! 

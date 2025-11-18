@@ -17,7 +17,7 @@ The calendar auto-sync now includes **token persistence**, which means OAuth tok
    ↓
 5. Tokens automatically reloaded on startup
    ↓
-6. Auto-sync works immediately ✅
+6. Auto-sync works immediately 
 ```
 
 ## First-Time Setup
@@ -65,7 +65,7 @@ docker-compose logs backend | tail -20
 
 **Look for:**
 ```
-✅ Saved OAuth tokens to file
+ Saved OAuth tokens to file
 ```
 
 ### 5. Verify Auto-Sync is Working
@@ -82,8 +82,8 @@ docker-compose logs backend | grep sync
 
 **Should see:**
 ```
-🔄 Running scheduled calendar sync...
-✅ Calendar sync complete: 42 events synced
+ Running scheduled calendar sync...
+ Calendar sync complete: 42 events synced
 ```
 
 ## Token Persistence Details
@@ -100,10 +100,10 @@ volumes:
 ```
 
 Tokens persist across:
-- ✅ Container restarts
-- ✅ Backend crashes
-- ✅ NAS reboots
-- ✅ Docker updates
+-  Container restarts
+-  Backend crashes
+-  NAS reboots
+-  Docker updates
 
 ### What's in tokens.json?
 
@@ -131,9 +131,9 @@ Tokens persist across:
 docker-compose logs backend | grep "Loaded OAuth tokens"
 ```
 
-**Expected:** `✅ Loaded OAuth tokens from file`
+**Expected:** ` Loaded OAuth tokens from file`
 
-**If you see:** `⚠️  No saved OAuth tokens found`
+**If you see:** `  No saved OAuth tokens found`
 - Tokens file doesn't exist
 - Need to authenticate (steps 2-4 above)
 
@@ -210,11 +210,11 @@ sudo chmod 644 /home/LumaWall/backend/data/tokens.json
 
 ### When Do You Need to Re-Authenticate?
 
-- ✅ First time setup
-- ✅ If you revoke app access in Google settings
-- ✅ If tokens.json is deleted
-- ❌ NOT after backend restarts (tokens are persistent!)
-- ❌ NOT when tokens expire (auto-refreshed)
+-  First time setup
+-  If you revoke app access in Google settings
+-  If tokens.json is deleted
+-  NOT after backend restarts (tokens are persistent!)
+-  NOT when tokens expire (auto-refreshed)
 
 ### How to Re-Authenticate
 
@@ -235,12 +235,12 @@ sudo chmod 644 /home/LumaWall/backend/data/tokens.json
 ### Is It Safe to Store Tokens?
 
 **Yes, with caveats:**
-- ✅ Tokens are stored locally on your NAS
-- ✅ Not transmitted over network
-- ✅ Only backend has access
-- ✅ Google can revoke tokens anytime
-- ⚠️ Anyone with NAS access can read tokens
-- ⚠️ Tokens grant read-only calendar access
+-  Tokens are stored locally on your NAS
+-  Not transmitted over network
+-  Only backend has access
+-  Google can revoke tokens anytime
+-  Anyone with NAS access can read tokens
+-  Tokens grant read-only calendar access
 
 ### Best Practices:
 
@@ -299,11 +299,11 @@ console.log('Expired?', expiry < new Date());
 
 ## Summary
 
-✅ **One-time authentication** - Authenticate once, works forever
-✅ **Automatic token refresh** - Google handles token expiration
-✅ **Survives restarts** - Tokens persist across all restarts
-✅ **Auto-sync enabled** - Syncs every 15 minutes automatically
-✅ **Secure storage** - Tokens stored locally on your NAS
-✅ **Easy re-authentication** - Simple steps to re-auth if needed
+ **One-time authentication** - Authenticate once, works forever
+ **Automatic token refresh** - Google handles token expiration
+ **Survives restarts** - Tokens persist across all restarts
+ **Auto-sync enabled** - Syncs every 15 minutes automatically
+ **Secure storage** - Tokens stored locally on your NAS
+ **Easy re-authentication** - Simple steps to re-auth if needed
 
 **After initial setup, calendar sync is fully automatic!**

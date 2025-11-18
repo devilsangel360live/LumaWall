@@ -20,13 +20,13 @@ class CalendarService {
     try {
       if (fs.existsSync(TOKENS_FILE)) {
         const tokens = JSON.parse(fs.readFileSync(TOKENS_FILE, 'utf8'));
-        console.log('✅ Loaded OAuth tokens from file');
+        console.log(' Loaded OAuth tokens from file');
         this.initializeAuth(tokens);
       } else {
-        console.log('⚠️  No saved OAuth tokens found. Please authenticate at: http://YOUR_NAS_IP:3001/api/calendar/auth/url');
+        console.log('  No saved OAuth tokens found. Please authenticate at: http://YOUR_NAS_IP:3001/api/calendar/auth/url');
       }
     } catch (error) {
-      console.error('❌ Error loading OAuth tokens:', error.message);
+      console.error(' Error loading OAuth tokens:', error.message);
     }
   }
 
@@ -40,9 +40,9 @@ class CalendarService {
         fs.mkdirSync(dataDir, { recursive: true });
       }
       fs.writeFileSync(TOKENS_FILE, JSON.stringify(tokens, null, 2));
-      console.log('✅ Saved OAuth tokens to file');
+      console.log(' Saved OAuth tokens to file');
     } catch (error) {
-      console.error('❌ Error saving OAuth tokens:', error.message);
+      console.error(' Error saving OAuth tokens:', error.message);
     }
   }
 
@@ -122,14 +122,14 @@ class CalendarService {
       const filteredCalendars = calendars.filter(cal => {
         const isAllowed = ALLOWED_CALENDAR_IDS.includes(cal.id);
         if (!isAllowed) {
-          console.log(`  ❌ Excluding: "${cal.summary}" (${cal.id})`);
+          console.log(`   Excluding: "${cal.summary}" (${cal.id})`);
         }
         return isAllowed;
       });
 
       console.log(`\nFiltered to ${filteredCalendars.length} allowed calendars:`);
       filteredCalendars.forEach(cal => {
-        console.log(`  ✅ ${cal.summary} (${cal.id})`);
+        console.log(`   ${cal.summary} (${cal.id})`);
       });
 
       // Store calendars in database

@@ -177,14 +177,14 @@ Once authenticated, tokens are saved. No need to re-authenticate!
 ### HTTP vs HTTPS
 
 **For home use on private network:**
-- ✅ HTTP is acceptable
-- ✅ Traffic stays within your local network
-- ✅ Google allows it for localhost/private IPs
+-  HTTP is acceptable
+-  Traffic stays within your local network
+-  Google allows it for localhost/private IPs
 
 **For public/production use:**
-- ❌ HTTP is not secure
-- ✅ Must use HTTPS with valid certificate
-- ✅ Use Let's Encrypt or similar
+-  HTTP is not secure
+-  Must use HTTPS with valid certificate
+-  Use Let's Encrypt or similar
 
 ### OAuth Scopes
 
@@ -194,10 +194,10 @@ https://www.googleapis.com/auth/calendar.readonly
 ```
 
 **This allows:**
-- ✅ Read calendar events
-- ❌ Cannot modify events
-- ❌ Cannot delete events
-- ❌ Cannot access other Google services
+-  Read calendar events
+-  Cannot modify events
+-  Cannot delete events
+-  Cannot access other Google services
 
 ---
 
@@ -243,7 +243,7 @@ docker-compose exec backend cat /app/data/tokens.json
 docker-compose logs backend | grep "Loaded OAuth tokens"
 ```
 
-Should see: `✅ Loaded OAuth tokens from file`
+Should see: ` Loaded OAuth tokens from file`
 
 ### 5. Test Sync
 
@@ -259,9 +259,9 @@ Should see successful sync in logs!
 
 **For home use, the easiest approach:**
 
-1. ✅ Use `http://localhost:3001` for redirect URI
-2. ✅ Authenticate from NAS (via SSH + curl)
-3. ✅ Once authenticated, tokens persist forever
-4. ✅ Access display from any device at `http://192.168.1.203`
+1.  Use `http://localhost:3001` for redirect URI
+2.  Authenticate from NAS (via SSH + curl)
+3.  Once authenticated, tokens persist forever
+4.  Access display from any device at `http://192.168.1.203`
 
 **Key Point:** You only need localhost for the initial OAuth callback. After that, everything works from any device on your network!

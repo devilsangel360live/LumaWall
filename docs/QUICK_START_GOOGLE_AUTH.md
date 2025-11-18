@@ -1,6 +1,6 @@
 # Quick Start: Google Calendar Authentication
 
-## ChatGPT Was Right! ✅
+## ChatGPT Was Right! 
 
 Using **Desktop App OAuth** is indeed the best approach. Here's how to set it up:
 
@@ -16,7 +16,7 @@ Go to: https://console.cloud.google.com/apis/credentials
 - Click **CREATE**
 - Copy the **Client ID** and **Client Secret**
 
-⚠️ **Important:** Must be "Desktop app", NOT "Web application"!
+ **Important:** Must be "Desktop app", NOT "Web application"!
 
 ### 2. Update .env File
 
@@ -77,13 +77,13 @@ ssh user@omv6.local "cd /home/LumaWall && docker-compose logs backend | tail -30
 
 You should see:
 ```
-✅ Loaded OAuth tokens from file
+ Loaded OAuth tokens from file
 Setting up calendar auto-sync: every 15 minutes
-🔄 Running scheduled calendar sync...
-✅ Calendar sync complete: XX events synced
+ Running scheduled calendar sync...
+ Calendar sync complete: XX events synced
 ```
 
-## That's It! 🎉
+## That's It! 
 
 No redirect URIs. No ngrok. No hassle.
 

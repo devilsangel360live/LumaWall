@@ -9,9 +9,9 @@ MapTiler's free tier includes:
 - **100,000 tile requests per month**
 
 To stay within the free tier, the map is:
-- ✅ **Cached and only recreated every 30 minutes** (not on every screen rotation)
-- ✅ **One session per 30 minutes** = ~1,440 sessions/month (well under 5K limit)
-- ✅ Console logs show when map refreshes
+-  **Cached and only recreated every 30 minutes** (not on every screen rotation)
+-  **One session per 30 minutes** = ~1,440 sessions/month (well under 5K limit)
+-  Console logs show when map refreshes
 
 ## Step 1: Get Your MapTiler API Key
 
@@ -58,9 +58,9 @@ The weather panel now includes:
   - Interactive MapTiler map centered on Boston
   - Hybrid satellite/street view
   - **Three weather layer options** (toggle with buttons):
-    - 💧 **Precipitation** - Rain/snow radar with color-coded intensity
-    - 🌡️ **Temperature** - Temperature overlay with heat map
-    - 💨 **Wind** - Wind speed/direction with animated particles
+    -  **Precipitation** - Rain/snow radar with color-coded intensity
+    -  **Temperature** - Temperature overlay with heat map
+    -  **Wind** - Wind speed/direction with animated particles
   - Weather layers from MapTiler Weather SDK
   - Auto-refresh every 30 minutes
 

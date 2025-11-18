@@ -28,7 +28,7 @@ router.get('/auth/callback', async (req, res) => {
       return res.status(400).send(`
         <html>
           <body style="font-family: sans-serif; padding: 40px; max-width: 600px; margin: 0 auto;">
-            <h2>❌ Authorization Failed</h2>
+            <h2> Authorization Failed</h2>
             <p>Error: ${error}</p>
             <p><a href="/">Try again</a></p>
           </body>
@@ -40,7 +40,7 @@ router.get('/auth/callback', async (req, res) => {
       return res.status(400).send(`
         <html>
           <body style="font-family: sans-serif; padding: 40px; max-width: 600px; margin: 0 auto;">
-            <h2>❌ No Authorization Code</h2>
+            <h2> No Authorization Code</h2>
             <p>Authorization code is missing from the callback.</p>
           </body>
         </html>
@@ -54,7 +54,7 @@ router.get('/auth/callback', async (req, res) => {
     res.send(`
       <html>
         <body style="font-family: sans-serif; padding: 40px; max-width: 600px; margin: 0 auto;">
-          <h2>✅ Authorization Successful!</h2>
+          <h2> Authorization Successful!</h2>
           <p>LumaWall has been authorized to access your Google Calendar.</p>
           <div style="background: #f0f0f0; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <h3>Next Steps:</h3>
@@ -82,7 +82,7 @@ cd frontend && npm run dev
     res.status(500).send(`
       <html>
         <body style="font-family: sans-serif; padding: 40px; max-width: 600px; margin: 0 auto;">
-          <h2>❌ Error Processing Authorization</h2>
+          <h2> Error Processing Authorization</h2>
           <p>${error.message}</p>
           <pre style="background: #f0f0f0; padding: 15px; border-radius: 5px; overflow-x: auto; font-size: 12px;">${error.stack}</pre>
         </body>

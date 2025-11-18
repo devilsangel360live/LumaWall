@@ -2,7 +2,7 @@
 
 Deploy LumaWall on your NAS in 5 minutes!
 
-## 🚀 One-Command Deploy
+##  One-Command Deploy
 
 ```bash
 # 1. SSH to your NAS
@@ -24,11 +24,11 @@ echo "VITE_MAPTILER_API_KEY=likPSlRJ1hqJaNrNRo1L" > .env
 docker-compose up -d
 ```
 
-## 📍 Access
+##  Access
 
 Open browser: **http://omv6.local** or **http://192.168.1.203**
 
-## ⚙️ Common Commands
+##  Common Commands
 
 ```bash
 cd /srv/lumawall
@@ -46,7 +46,7 @@ docker-compose down
 docker-compose down && docker-compose build && docker-compose up -d
 ```
 
-## 🔧 Quick Fixes
+##  Quick Fixes
 
 **Photos not showing?**
 ```bash
@@ -70,7 +70,7 @@ find /srv -name "PhotosPool" 2>/dev/null
 find /volume1 -name "PhotosPool" 2>/dev/null
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 LumaWall/
@@ -83,15 +83,15 @@ LumaWall/
     └── Dockerfile
 ```
 
-## 🎯 What Gets Deployed
+##  What Gets Deployed
 
 - **Frontend** (port 80): Photo frame UI with weather
 - **Backend** (port 3001): Serves photos from NAS
 - **Auto-restart**: Both services restart on NAS reboot
 
-## 📖 Full Documentation
+##  Full Documentation
 
 - [DEPLOYMENT_NAS.md](DEPLOYMENT_NAS.md) - Complete NAS deployment guide
 - [DEPLOYMENT.md](DEPLOYMENT.md) - Generic server deployment
 
-That's it! Your LumaWall digital photo frame is now running! 🎉
+That's it! Your LumaWall digital photo frame is now running! 

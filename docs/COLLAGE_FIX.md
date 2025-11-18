@@ -10,7 +10,7 @@ When the screen rotates away from the collage view and back, the collage remains
 In [CollageView.jsx:79-91](frontend/src/components/CollageView.jsx#L79-L91), the auto-rotate timer had incomplete dependencies:
 
 ```javascript
-// ❌ BEFORE - Missing generateRandomCollage in dependencies
+//  BEFORE - Missing generateRandomCollage in dependencies
 useEffect(() => {
   const timer = setInterval(() => {
     generateRandomCollage()
@@ -34,7 +34,7 @@ When screens rotate, the CollageView component stays mounted (just hidden with `
 **File:** [CollageView.jsx:50-70](frontend/src/components/CollageView.jsx#L50-L70)
 
 ```javascript
-// ✅ AFTER - Memoized function with proper dependencies
+//  AFTER - Memoized function with proper dependencies
 const generateRandomCollage = useCallback(() => {
   if (photos.length === 0) return
 
@@ -60,7 +60,7 @@ const generateRandomCollage = useCallback(() => {
 **File:** [CollageView.jsx:79-91](frontend/src/components/CollageView.jsx#L79-L91)
 
 ```javascript
-// ✅ AFTER - Complete dependencies
+//  AFTER - Complete dependencies
 useEffect(() => {
   if (photos.length === 0 || imagesLoaded < collagePhotos.length) return
 
@@ -136,13 +136,13 @@ Use key prop to force remount:
 ### Before Fix:
 ```
 Screen rotation: Month → Week → Slideshow → Collage (shows photos A, B, C)
-Next rotation: Month → Week → Slideshow → Collage (shows same photos A, B, C) ❌
+Next rotation: Month → Week → Slideshow → Collage (shows same photos A, B, C) 
 ```
 
 ### After Fix:
 ```
 Screen rotation: Month → Week → Slideshow → Collage (shows photos A, B, C)
-Next rotation: Month → Week → Slideshow → Collage (shows NEW photos D, E, F) ✅
+Next rotation: Month → Week → Slideshow → Collage (shows NEW photos D, E, F) 
 ```
 
 ## Files Modified
@@ -182,10 +182,10 @@ After deploying this fix:
 
 ## Summary
 
-✅ **Fixed:** Collage now generates fresh random photos every time the screen rotates to it
+ **Fixed:** Collage now generates fresh random photos every time the screen rotates to it
 
-✅ **Fixed:** Auto-rotation continues working while collage is visible
+ **Fixed:** Auto-rotation continues working while collage is visible
 
-✅ **Fixed:** Proper cleanup and no memory leaks
+ **Fixed:** Proper cleanup and no memory leaks
 
-✅ **Result:** Dynamic, never-repeating collage display
+ **Result:** Dynamic, never-repeating collage display

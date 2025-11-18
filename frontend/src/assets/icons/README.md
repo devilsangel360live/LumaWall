@@ -19,17 +19,17 @@ These icons appear in the main weather display and forecast.
 **Location:** `frontend/src/assets/icons/weather/`
 
 **Available icon slots:**
-- `sunny.svg` - Clear sky (currently: ☀️)
-- `partly-cloudy.svg` - Few clouds (currently: 🌤️)
-- `cloudy.svg` - Cloudy/Overcast (currently: ☁️)
-- `rain.svg` - Rain (currently: 🌧️)
-- `showers.svg` - Rain showers (currently: 🌦️)
-- `storm.svg` - Thunderstorm (currently: ⛈️)
-- `snow.svg` - Snow (currently: 🌨️)
-- `fog.svg` - Fog/Mist (currently: 🌫️)
-- `windy.svg` - Windy (currently: 💨)
-- `blizzard.svg` - Blizzard (currently: ❄️)
-- `hurricane.svg` - Hurricane (currently: 🌀)
+- `sunny.svg` - Clear sky (currently: )
+- `partly-cloudy.svg` - Few clouds (currently: )
+- `cloudy.svg` - Cloudy/Overcast (currently: )
+- `rain.svg` - Rain (currently: )
+- `showers.svg` - Rain showers (currently: )
+- `storm.svg` - Thunderstorm (currently: )
+- `snow.svg` - Snow (currently: )
+- `fog.svg` - Fog/Mist (currently: )
+- `windy.svg` - Windy (currently: )
+- `blizzard.svg` - Blizzard (currently: )
+- `hurricane.svg` - Hurricane (currently: )
 
 **To replace icons:**
 1. Place your icon files in `frontend/src/assets/icons/weather/`
@@ -39,9 +39,9 @@ These icons appear in the main weather display and forecast.
 
 ```javascript
 const iconMap = {
-  'skc': '/src/assets/icons/weather/sunny.svg',           // Replace ☀️
-  'rain': '/src/assets/icons/weather/rain.svg',           // Replace 🌧️
-  'snow': '/src/assets/icons/weather/snow.svg',           // Replace 🌨️
+  'skc': '/src/assets/icons/weather/sunny.svg',           // Replace 
+  'rain': '/src/assets/icons/weather/rain.svg',           // Replace 
+  'snow': '/src/assets/icons/weather/snow.svg',           // Replace 
   // ... etc
 }
 ```
@@ -53,15 +53,15 @@ These icons appear in the highlight boxes (humidity, wind, etc.)
 **Location:** `frontend/src/assets/icons/metrics/`
 
 **Available icon slots:**
-- `humidity.svg` - Humidity icon (currently: 💧)
-- `visibility.svg` - Visibility icon (currently: 👁️)
-- `sunrise.svg` - Sunrise icon (currently: 🌅)
-- `sunset.svg` - Sunset icon (currently: 🌇)
-- `temperature.svg` - Feels like temperature (currently: 🌡️)
-- `cloud.svg` - Cloud cover (currently: ☁️)
-- `wind.svg` - Wind status (currently: 💨)
-- `air-quality.svg` - Air quality (currently: 🌫️)
-- `pressure.svg` - Pressure (currently: 📊)
+- `humidity.svg` - Humidity icon (currently: )
+- `visibility.svg` - Visibility icon (currently: )
+- `sunrise.svg` - Sunrise icon (currently: )
+- `sunset.svg` - Sunset icon (currently: )
+- `temperature.svg` - Feels like temperature (currently: )
+- `cloud.svg` - Cloud cover (currently: )
+- `wind.svg` - Wind status (currently: )
+- `air-quality.svg` - Air quality (currently: )
+- `pressure.svg` - Pressure (currently: )
 
 **To replace icons:**
 1. Place your icon files in `frontend/src/assets/icons/metrics/`
@@ -71,9 +71,9 @@ These icons appear in the highlight boxes (humidity, wind, etc.)
 
 ```javascript
 const metricIcons = {
-  humidity: '/src/assets/icons/metrics/humidity.svg',     // Replace 💧
-  visibility: '/src/assets/icons/metrics/visibility.svg', // Replace 👁️
-  wind: '/src/assets/icons/metrics/wind.svg',            // Replace 💨
+  humidity: '/src/assets/icons/metrics/humidity.svg',     // Replace 
+  visibility: '/src/assets/icons/metrics/visibility.svg', // Replace 
+  wind: '/src/assets/icons/metrics/wind.svg',            // Replace 
   // ... etc
 }
 ```
@@ -101,7 +101,7 @@ const metricIcons = {
 2. Edit `WeatherPanel.jsx`:
 ```javascript
 const metricIcons = {
-  humidity: '/src/assets/icons/metrics/humidity.svg',  // Changed from 💧
+  humidity: '/src/assets/icons/metrics/humidity.svg',  // Changed from 
   // ... rest of icons
 }
 ```

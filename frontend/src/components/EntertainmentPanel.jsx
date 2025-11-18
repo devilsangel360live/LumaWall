@@ -60,11 +60,11 @@ function EntertainmentPanel({ colors }) {
 
     // Check if S (stuquery) and S.virtualsky are available
     if (typeof window.S === 'undefined' || typeof window.S.virtualsky === 'undefined') {
-      console.error('❌ VirtualSky library not loaded')
+      console.error(' VirtualSky library not loaded')
       return
     }
 
-    console.log('✅ Initializing VirtualSky with location:', data.location)
+    console.log(' Initializing VirtualSky with location:', data.location)
 
     try {
       // Initialize VirtualSky with proper paths to data files
@@ -98,7 +98,7 @@ function EntertainmentPanel({ colors }) {
         }
       })
 
-      console.log('✅ VirtualSky initialized successfully')
+      console.log(' VirtualSky initialized successfully')
 
       // Set up rotation animation - slowly pan through 360 degrees
       let currentAz = 180 // Start facing south
@@ -113,9 +113,9 @@ function EntertainmentPanel({ colors }) {
       // Store interval for cleanup
       virtualSkyInstance.current.rotationInterval = rotationInterval
 
-      console.log('✅ Star chart rotation started')
+      console.log(' Star chart rotation started')
     } catch (err) {
-      console.error('❌ Error initializing VirtualSky:', err)
+      console.error(' Error initializing VirtualSky:', err)
     }
 
     // Cleanup
@@ -162,7 +162,7 @@ function EntertainmentPanel({ colors }) {
         <div className="flex-1 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden flex flex-col">
           <div className="px-4 py-3 border-b border-white/10 bg-gradient-to-r from-purple-500/20 to-transparent">
             <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-              <span>🎬</span> Now in Theaters
+              <span></span> Now in Theaters
             </h2>
           </div>
 
@@ -186,7 +186,7 @@ function EntertainmentPanel({ colors }) {
                         {movie.title}
                       </h3>
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-yellow-400 text-sm">★ {movie.rating.toFixed(1)}</span>
+                        <span className="text-yellow-400 text-sm"> {movie.rating.toFixed(1)}</span>
                         <span className="text-gray-400 text-sm">{movie.releaseDate?.split('-')[0]}</span>
                       </div>
                       <p className="text-gray-300 text-xs line-clamp-3">
@@ -208,7 +208,7 @@ function EntertainmentPanel({ colors }) {
         <div className="h-2/5 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden flex flex-col">
           <div className="px-4 py-3 border-b border-white/10 bg-gradient-to-r from-amber-500/20 to-transparent">
             <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-              <span>📜</span> On This Day
+              <span></span> On This Day
             </h2>
             {data?.history?.date && (
               <p className="text-sm text-gray-300">{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</p>
@@ -220,8 +220,8 @@ function EntertainmentPanel({ colors }) {
               <div key={idx} className="border-l-4 border-amber-500 pl-3 py-1 transition-all hover:border-amber-400">
                 <div className="flex items-start gap-2">
                   <span className="text-amber-400 font-bold text-sm flex-shrink-0">{event.year}</span>
-                  {event.type === 'birth' && <span className="text-xs">👶</span>}
-                  {event.type === 'death' && <span className="text-xs">🕊️</span>}
+                  {event.type === 'birth' && <span className="text-xs"></span>}
+                  {event.type === 'death' && <span className="text-xs"></span>}
                 </div>
                 <p className="text-white text-sm leading-snug">{event.text}</p>
               </div>
@@ -241,7 +241,7 @@ function EntertainmentPanel({ colors }) {
         <div className="h-full bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden flex flex-col">
           <div className="px-4 py-3 border-b border-white/10 bg-gradient-to-r from-blue-500/20 to-transparent">
             <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-              <span>⭐</span> Night Sky
+              <span></span> Night Sky
             </h2>
             <p className="text-sm text-gray-300">Current star positions for your location</p>
           </div>

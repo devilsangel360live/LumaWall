@@ -2,12 +2,12 @@
 
 ## Current Sync Behavior
 
-### **Frontend Auto-Refresh** ✅
+### **Frontend Auto-Refresh** 
 - **Fetches calendar data from backend every 5 minutes**
 - Configured in: `frontend/src/hooks/useCalendarData.js:59-60`
 - No action needed
 
-### **Backend Auto-Sync** ✅ (Now Enabled!)
+### **Backend Auto-Sync**  (Now Enabled!)
 - **Syncs with Google Calendar every 15 minutes**
 - Configured in: `backend/src/index.js:39-59`
 - Uses cron job: `*/15 * * * *`
@@ -81,8 +81,8 @@ docker-compose logs -f backend
 **Look for:**
 ```
 Setting up calendar auto-sync: every 15 minutes
-🔄 Running scheduled calendar sync...
-✅ Calendar sync complete: 42 events synced
+ Running scheduled calendar sync...
+ Calendar sync complete: 42 events synced
 ```
 
 **Happens every 15 minutes**
@@ -149,7 +149,7 @@ Google Calendar API limits:
 - 4 syncs/hour
 - 96 syncs/day
 - ~5-10 API calls per sync (depends on # of calendars)
-- **Total: ~500-1000 API calls/day** ✅ Well within limits
+- **Total: ~500-1000 API calls/day**  Well within limits
 
 **To reduce:**
 - Increase `SYNC_INTERVAL` to 30 or 60 minutes
@@ -235,10 +235,10 @@ Persists across container restarts if volume mounted.
 
 ## Summary
 
-✅ **Backend syncs with Google Calendar every 15 minutes**
-✅ **Frontend fetches from backend every 5 minutes**
-✅ **New events appear within 20 minutes maximum**
-✅ **Can trigger manual sync anytime via API**
-✅ **Well within Google API limits**
+ **Backend syncs with Google Calendar every 15 minutes**
+ **Frontend fetches from backend every 5 minutes**
+ **New events appear within 20 minutes maximum**
+ **Can trigger manual sync anytime via API**
+ **Well within Google API limits**
 
 Deploy the updated backend to enable auto-sync!

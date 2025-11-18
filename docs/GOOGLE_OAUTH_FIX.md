@@ -107,7 +107,7 @@ docker-compose logs backend | grep -i sync
 
 Should see:
 ```
-✅ Calendar sync complete: XX events synced
+ Calendar sync complete: XX events synced
 ```
 
 ---
@@ -190,11 +190,11 @@ Add: `http://omv6.local:3001/api/calendar/auth/callback`
 
 ## Summary
 
-1. ✅ Remove `device_id` and `device_name` from OAuth URL (already done in code)
-2. ✅ Use NAS IP address as redirect URI (192.168.1.203)
-3. ⚠️ **MUST add this URI to Google Cloud Console** (you need to do this)
-4. 🔄 Restart backend after updating .env
-5. 🔗 Get auth URL and open in browser
-6. ✅ Tokens save automatically, sync works forever
+1.  Remove `device_id` and `device_name` from OAuth URL (already done in code)
+2.  Use NAS IP address as redirect URI (192.168.1.203)
+3.  **MUST add this URI to Google Cloud Console** (you need to do this)
+4.  Restart backend after updating .env
+5.  Get auth URL and open in browser
+6.  Tokens save automatically, sync works forever
 
 **Once authenticated, you never need to do this again!** Tokens persist across restarts.

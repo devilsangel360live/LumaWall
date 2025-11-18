@@ -42,7 +42,7 @@ async function authenticate() {
 
   // Check for required environment variables
   if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
-    console.error('❌ Error: Missing Google OAuth credentials');
+    console.error(' Error: Missing Google OAuth credentials');
     console.error('');
     console.error('Please create a .env file with:');
     console.error('  GOOGLE_CLIENT_ID=your_client_id');
@@ -53,7 +53,7 @@ async function authenticate() {
     process.exit(1);
   }
 
-  console.log('✓ Loaded OAuth credentials from .env');
+  console.log(' Loaded OAuth credentials from .env');
   console.log('  Client ID:', process.env.GOOGLE_CLIENT_ID.substring(0, 20) + '...');
   console.log();
 
@@ -71,7 +71,7 @@ async function authenticate() {
     prompt: 'consent'
   });
 
-  console.log('📋 Step 1: Authorize this app');
+  console.log(' Step 1: Authorize this app');
   console.log('─'.repeat(60));
   console.log();
   console.log('Open this URL in your browser:');
@@ -88,24 +88,24 @@ async function authenticate() {
   });
 
   const code = await new Promise((resolve) => {
-    rl.question('📝 Paste the authorization code here: ', (answer) => {
+    rl.question(' Paste the authorization code here: ', (answer) => {
       rl.close();
       resolve(answer.trim());
     });
   });
 
   console.log();
-  console.log('🔄 Exchanging code for tokens...');
+  console.log(' Exchanging code for tokens...');
 
   try {
     // Exchange code for tokens
     const { tokens } = await oauth2Client.getToken(code);
 
-    console.log('✅ Successfully obtained tokens!');
+    console.log(' Successfully obtained tokens!');
     console.log();
     console.log('Token details:');
-    console.log('  - Access Token:', tokens.access_token ? '✓ Present' : '✗ Missing');
-    console.log('  - Refresh Token:', tokens.refresh_token ? '✓ Present' : '✗ Missing');
+    console.log('  - Access Token:', tokens.access_token ? ' Present' : ' Missing');
+    console.log('  - Refresh Token:', tokens.refresh_token ? ' Present' : ' Missing');
     console.log('  - Expiry Date:', tokens.expiry_date ? new Date(tokens.expiry_date).toLocaleString() : 'N/A');
     console.log();
 
@@ -113,21 +113,21 @@ async function authenticate() {
     const dataDir = path.dirname(TOKENS_FILE);
     if (!fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true });
-      console.log('✓ Created data directory:', dataDir);
+      console.log(' Created data directory:', dataDir);
     }
 
     // Save tokens to file
     fs.writeFileSync(TOKENS_FILE, JSON.stringify(tokens, null, 2));
-    console.log('✅ Saved tokens to:', TOKENS_FILE);
+    console.log(' Saved tokens to:', TOKENS_FILE);
     console.log();
 
     // Test the tokens by fetching calendar list
-    console.log('🧪 Testing tokens by fetching calendar list...');
+    console.log(' Testing tokens by fetching calendar list...');
     oauth2Client.setCredentials(tokens);
     const calendar = google.calendar({ version: 'v3', auth: oauth2Client });
     const response = await calendar.calendarList.list();
 
-    console.log('✅ Successfully connected to Google Calendar!');
+    console.log(' Successfully connected to Google Calendar!');
     console.log();
     console.log('Found calendars:');
     response.data.items.forEach((cal, index) => {
@@ -137,7 +137,7 @@ async function authenticate() {
 
     // Instructions for deployment
     console.log('='.repeat(60));
-    console.log('🎉 Authentication Complete!');
+    console.log(' Authentication Complete!');
     console.log('='.repeat(60));
     console.log();
     console.log('Next steps:');
@@ -164,7 +164,7 @@ async function authenticate() {
     console.log();
 
   } catch (error) {
-    console.error('❌ Error exchanging code for tokens:', error.message);
+    console.error(' Error exchanging code for tokens:', error.message);
     console.error();
     console.error('Troubleshooting:');
     console.error('  - Make sure you copied the ENTIRE authorization code');
@@ -176,6 +176,6 @@ async function authenticate() {
 
 // Run authentication
 authenticate().catch((error) => {
-  console.error('❌ Unexpected error:', error);
+  console.error(' Unexpected error:', error);
   process.exit(1);
 });

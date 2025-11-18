@@ -62,7 +62,7 @@ function EventCard({ event }) {
 
         {event.location && (
           <p className="flex items-center gap-1">
-            <span>📍</span>
+            <span></span>
             <span>{event.location}</span>
           </p>
         )}

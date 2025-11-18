@@ -95,4 +95,4 @@ docker-compose build --no-cache
 docker-compose up -d
 ```
 
-⚠️ **WARNING**: This will delete ALL unused Docker images and volumes on your system!
+ **WARNING**: This will delete ALL unused Docker images and volumes on your system!

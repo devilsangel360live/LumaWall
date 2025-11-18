@@ -120,10 +120,10 @@ echo "Optimization complete! Backups in: $BACKUP_DIR"
 
 ## Current Status
 
-✅ **Image preloading leak** - FIXED
-✅ **Auto-refresh** - ADDED (6 hour interval)
-⚠️ **Large photos** - RECOMMEND optimization
-✅ **Map cleanup** - Already implemented
+ **Image preloading leak** - FIXED
+ **Auto-refresh** - ADDED (6 hour interval)
+ **Large photos** - RECOMMEND optimization
+ **Map cleanup** - Already implemented
 
 ## Next Steps
 

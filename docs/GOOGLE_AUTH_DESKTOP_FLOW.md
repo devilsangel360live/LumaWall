@@ -4,11 +4,11 @@
 
 The Desktop App OAuth flow is the **correct and easiest way** to authenticate Google Calendar for a headless server like your NAS. Benefits:
 
-✅ **No redirect URI issues** - No need for public domain, HTTPS, or ngrok
-✅ **One-time setup** - Authenticate once on your laptop, use forever
-✅ **Refresh tokens** - Automatically refreshes, never expires (unless revoked)
-✅ **Simple** - Just run a script, copy one file
-✅ **Secure** - Tokens stored locally, not exposed publicly
+ **No redirect URI issues** - No need for public domain, HTTPS, or ngrok
+ **One-time setup** - Authenticate once on your laptop, use forever
+ **Refresh tokens** - Automatically refreshes, never expires (unless revoked)
+ **Simple** - Just run a script, copy one file
+ **Secure** - Tokens stored locally, not exposed publicly
 
 ## Step-by-Step Setup
 
@@ -77,10 +77,10 @@ node authenticate-google.js
 Google Calendar Authentication Helper
 ============================================================
 
-✓ Loaded OAuth credentials from .env
+ Loaded OAuth credentials from .env
   Client ID: 123456789-abcdefg...
 
-📋 Step 1: Authorize this app
+ Step 1: Authorize this app
 ────────────────────────────────────────────────────────────
 
 Open this URL in your browser:
@@ -89,28 +89,28 @@ https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=...
 
 After authorizing, Google will show you an authorization code.
 
-📝 Paste the authorization code here: 4/0AY0e-g5...
+ Paste the authorization code here: 4/0AY0e-g5...
 
-🔄 Exchanging code for tokens...
-✅ Successfully obtained tokens!
+ Exchanging code for tokens...
+ Successfully obtained tokens!
 
 Token details:
-  - Access Token: ✓ Present
-  - Refresh Token: ✓ Present
+  - Access Token:  Present
+  - Refresh Token:  Present
   - Expiry Date: 1/15/2025, 3:45:00 PM
 
-✓ Created data directory: backend/data
-✅ Saved tokens to: backend/data/tokens.json
+ Created data directory: backend/data
+ Saved tokens to: backend/data/tokens.json
 
-🧪 Testing tokens by fetching calendar list...
-✅ Successfully connected to Google Calendar!
+ Testing tokens by fetching calendar list...
+ Successfully connected to Google Calendar!
 
 Found calendars:
   1. Primary (your.email@gmail.com)
   2. Family Calendar (family@group.calendar.google.com)
 
 ============================================================
-🎉 Authentication Complete!
+ Authentication Complete!
 ============================================================
 ```
 
@@ -163,10 +163,10 @@ ssh user@omv6.local "cd /home/LumaWall && docker-compose logs backend | tail -20
 You should see:
 
 ```
-✅ Loaded OAuth tokens from file
+ Loaded OAuth tokens from file
 Setting up calendar auto-sync: every 15 minutes
-🔄 Running scheduled calendar sync...
-✅ Calendar sync complete: 25 events synced
+ Running scheduled calendar sync...
+ Calendar sync complete: 25 events synced
 ```
 
 **Manually trigger a sync to test:**
@@ -293,7 +293,7 @@ Should return:
 
 ## Comparison: Old vs New Approach
 
-### ❌ Old Approach (Web Application Flow)
+###  Old Approach (Web Application Flow)
 - Required redirect URI with public domain or IP
 - Google rejects private IPs
 - Needed ngrok or public DNS
@@ -301,7 +301,7 @@ Should return:
 - Redirect URI mismatch errors
 - Required browser on NAS or SSH tunneling
 
-### ✅ New Approach (Desktop App Flow)
+###  New Approach (Desktop App Flow)
 - No redirect URI needed (uses OOB)
 - No public domain needed
 - No ngrok needed
@@ -315,7 +315,7 @@ Should return:
 
 ### Is This Secure?
 
-✅ **Yes**, because:
+ **Yes**, because:
 - Tokens are stored locally, not transmitted over network
 - Backend only makes HTTPS requests to Google APIs
 - Refresh token is encrypted in transit to Google
@@ -352,11 +352,11 @@ LumaWall/
 
 ## Summary
 
-1. ✅ Create **Desktop App** OAuth client in Google Cloud Console
-2. ✅ Update `.env` with new credentials
-3. ✅ Run `node authenticate-google.js` on your laptop
-4. ✅ Copy `backend/data/tokens.json` to NAS
-5. ✅ Restart backend container
-6. ✅ Calendar auto-sync works forever!
+1.  Create **Desktop App** OAuth client in Google Cloud Console
+2.  Update `.env` with new credentials
+3.  Run `node authenticate-google.js` on your laptop
+4.  Copy `backend/data/tokens.json` to NAS
+5.  Restart backend container
+6.  Calendar auto-sync works forever!
 
-**No redirect URIs. No ngrok. No hassle. Just works!** 🎉
+**No redirect URIs. No ngrok. No hassle. Just works!** 
